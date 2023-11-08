@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+		<title>微信在线安装</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+		<style>
+			.download_btn {
+				display:inline-block; /* 设置为块元素 */
+				width: 180px;
+				height: 40px;
+				line-height: 40px; /* 设置垂直居中 */
+				border-radius:20px;
+				margin:0 auto; 
+				background: #29BB9C;	
+				color:#ffffff;
+			}
+			a:hover {background:#628FA4;}
+		</style>
+	</head>
+	
+	<body>
+		<h2 style="text-align:center;">微信2</h2>
+		<p style="text-align: center">
+			<a class="download_btn" style="font-size:18px;text-decoration:none;" href="itms-services://?action=download-manifest&url=https://dypd.eu.org/tkpj01">安装</a>
+		</p>
+		<p class="subtitle" style="font-size:15px;text-align:center;">通过Safari打开链接，点击按钮下载安装</p> 
+		<div id="qrcode" style="width:200px; height:200px;margin:0 auto;"></div>
+		<script type="text/javascript">
+			//生成二维码
+			var url = window.location.href;
+			console.log(url)
+			$('#qrcode').qrcode({
+				text: url,      // 二维码的内容
+				render: "canvas",               // 设置渲染方式
+				width: 200,                     // 设置宽度: 默认256
+				height: 200,                    // 设置高度: 默认256
+				background: "#ffffff",          // 背景颜色
+				foreground: "#000000",          // 前景颜色
+				src: "./logo.png",              // logo地址
+			});
+		</script>
+	</body>  
+</html>
